@@ -1,9 +1,9 @@
 {
-  "name": "moeen-basra/laravel-payfort",
+  "name": "ahmedbally/laravel-payfort",
   "description": "Laravel package for Payfort payment gateway",
   "type": "library",
   "require": {
-    "php": "^7.2",
+    "php": "^7.2|^8.0",
     "moneyphp/money": "^3.2",
     "guzzlehttp/guzzle": "^6.0|^7.0",
     "ext-json": "*",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Moeen Basra",
-      "email": "m.basra@live.com"
+      "name": "Ahmed Bally",
+      "email": "ahmedbaly87@gmail.com"
     }
   ],
   "require-dev": {
