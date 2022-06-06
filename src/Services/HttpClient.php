@@ -118,7 +118,7 @@ class HttpClient
             ],
             'cookies' => new CookieJar(),
             'allow_redirects' => true,
-            'debug' => $this->is_sandbox ? true : false,
+            'debug' => $this->is_sandbox ? fopen('php://stderr', 'w') : false,
         ];
     }
 
