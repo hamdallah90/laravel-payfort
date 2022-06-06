@@ -8,7 +8,7 @@ this package is under development currently it only support merchant page 2 inte
 ## How to install
 
 ```
-composer require moeen-basra/laravel-payfort
+composer require ahmedbally/laravel-payfort
 ```
 
 publish the configuration using the following command
