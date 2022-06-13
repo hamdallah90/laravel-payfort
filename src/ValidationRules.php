@@ -48,6 +48,7 @@ class ValidationRules
         'UPLOAD_BATCH_FILE',
         'CURRENCY_CONVERSION',
         'CREATE_TOKEN',
+        'UPDATE_TOKEN',
         'BILL_PRESENTMENT',
         'PAYMENT_LINK',
     ];
