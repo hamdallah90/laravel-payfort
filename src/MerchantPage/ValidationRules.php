@@ -29,6 +29,8 @@ class ValidationRules extends BaseRules
             'card_security_code' => 'digits_between:3,4',
             'card_holder_name' => 'string|max:50',
             'token_name' => 'max:100',
+            'new_token_name' => 'max:100',
+            'token_status' => 'in:ACTIVE,INACTIVE|max:8',
             'remember_me' => 'in:YES,NO|max:3',
             'return_url' => 'max:400',
         ];
