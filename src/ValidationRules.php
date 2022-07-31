@@ -26,7 +26,7 @@ class ValidationRules
     public static $avaiable_eci = [
         'ECOMMERCE',
         'MOTO',
-        'RECCURING',
+        'RECURRING',
     ];
 
     /**
@@ -37,6 +37,7 @@ class ValidationRules
     public static $commands = [
         'authorization' => 'AUTHORIZATION',
         'purchase' => 'PURCHASE',
+        'refund' => 'REFUND',
     ];
 
     public static $service_commands = [
