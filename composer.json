@@ -1,5 +1,5 @@
 {
-  "name": "ahmedbally/laravel-payfort",
+  "name": "hamdallah90/laravel-payfort",
   "description": "Laravel package for Payfort payment gateway",
   "type": "library",
   "require": {
@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Ahmed Bally",
-      "email": "ahmedbaly87@gmail.com"
+      "name": "Hamdallah jodah",
+      "email": "hamdallahjodah@gmail.com"
     }
   ],
   "require-dev": {
