@@ -80,6 +80,18 @@ class Payfort
     }
 
     /**
+     * get the apple pay payment_method
+     *
+     * @param array $config
+     *
+     * @return \MoeenBasra\Payfort\MerchantPage\MerchantPage
+     */
+    private function configureApplePayMethod(array $config)
+    {
+        return new MerchantPage($config);
+    }
+
+    /**
      * @param array $config
      *
      * @throws \MoeenBasra\Payfort\Exceptions\PayfortException

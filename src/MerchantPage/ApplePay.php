@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MoeenBasra\Payfort\MerchantPage;
 
 use Illuminate\Support\Arr;
@@ -9,7 +8,7 @@ use Illuminate\Validation\ValidationException;
 use MoeenBasra\Payfort\Abstracts\PaymentMethod;
 use MoeenBasra\Payfort\Exceptions\IncompletePayment;
 
-class MerchantPage extends PaymentMethod
+class ApplePay extends PaymentMethod
 {
     public function __construct(array $config)
     {
@@ -29,6 +28,7 @@ class MerchantPage extends PaymentMethod
     {
         $params = array_merge([
             'command' => 'AUTHORIZATION',
+            'digital_wallet' => 'APPLE_PAY',
             'access_code' => $this->access_code,
             'merchant_identifier' => $this->merchant_identifier,
             'language' => $this->language,
@@ -45,7 +45,7 @@ class MerchantPage extends PaymentMethod
         }
 
         // get the validated data for authorization
-        $validator = Validator::make($params, ValidationRules::authorization());
+        $validator = Validator::make($params, ValidationRules::applePayPurchase());
 
         if ($validator->fails()) {
             throw new ValidationException($validator);
@@ -64,40 +64,7 @@ class MerchantPage extends PaymentMethod
      */
     public function prepareTokenizationData(array $params): array
     {
-        $params = array_merge([
-            'service_command' => 'TOKENIZATION',
-            'access_code' => $this->access_code,
-            'merchant_identifier' => $this->merchant_identifier,
-            'language' => $this->language,
-            'currency' => $this->currency,
-        ], $params);
-
-        // if signature is not already set
-        if (!$signature = Arr::get($params, 'signature')) {
-
-            // create the signature
-            $signature = $this->createSignature(
-                Arr::except($params, [
-                    'card_security_code',
-                    'card_number',
-                    'expiry_date',
-                    'card_holder_name',
-                    'remember_me',
-                ])
-            );
-
-            // add signature in the params
-            $params['signature'] = $signature;
-        }
-
-        // validate and return the valid data for merchant page
-        $validator = Validator::make($params, ValidationRules::tokenization());
-
-        if ($validator->fails()) {
-            throw new ValidationException($validator);
-        }
-
-        return $validator->validated();
+        return [];
     }
 
     /**

@@ -68,6 +68,44 @@ class ValidationRules extends BaseRules
         ];
     }
 
+    public static function applePayPurchase()
+    {
+        return [
+            'command' => 'required|in:purchase',
+            'access_code' => 'required|alpha_num|max:20',
+            'merchant_identifier' => 'required|alpha_num|max:20',
+            'merchant_reference' => 'required|string|max:40',
+            'amount' => 'required|numeric',
+            'currency' => 'required|alpha|max:3',
+            'language' => 'required|alpha|max:2',
+            'customer_email' => 'required|email',
+            'customer_ip' => 'required|ip',
+            'token_name' => 'required|max:100',
+            'signature' => 'required|max:200',
+            'apple_data' => 'required|max:500',
+            'apple_signature' => 'required|max:3000',
+            'apple_header' => 'required|array',
+            'apple_header.apple_transactionId' => 'required|max:100',
+            'apple_header.apple_ephemeralPublicKey' => 'required|max:200',
+            'apple_header.apple_publicKeyHash' => 'required|max:100',
+            'apple_paymentMethod' => 'required|array',
+            'apple_paymentMethod.apple_displayName' => 'required|max:50',
+            'apple_paymentMethod.apple_network' => 'required|max:50',
+            'apple_paymentMethod.apple_type' => 'required|max:20',
+            'eci' => 'in:' . implode(',', self::$avaiable_eci),
+            'order_description' => 'max:150',
+            'card_security_code' => 'digits_between:3,4',
+            'customer_name' => 'string|max:40',
+            'merchant_extra' => 'string|max:999',
+            'merchant_extra1' => 'string|max:250',
+            'merchant_extra2' => 'string|max:250',
+            'merchant_extra3' => 'string|max:250',
+            'merchant_extra4' => 'string|max:250',
+            'merchant_extra5' => 'string|max:250',
+            'phone_number' => 'max:19'
+        ];
+    }
+
     public static function checkStatus()
     {
         return [
