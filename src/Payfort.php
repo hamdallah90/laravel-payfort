@@ -7,6 +7,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use MoeenBasra\Payfort\MerchantPage\MerchantPage;
 use MoeenBasra\Payfort\Exceptions\PayfortException;
+use MoeenBasra\Payfort\MerchantPage\ApplePay;
 
 class Payfort
 {
@@ -88,7 +89,7 @@ class Payfort
      */
     private function configureApplePayMethod(array $config)
     {
-        return new MerchantPage($config);
+        return new ApplePay($config);
     }
 
     /**
