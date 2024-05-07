@@ -65,6 +65,12 @@ class ValidationRules
 
     ];
 
+    public static $recurring_mode = [
+        'UNSCHEDULED',
+        'VARIABLE',
+        'FIXED'
+    ];
+
     /**
      * basic configuration rules
      *
