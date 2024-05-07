@@ -61,6 +61,8 @@ class ValidationRules extends BaseRules
             'merchant_extra3' => 'string|max:250',
             'merchant_extra4' => 'string|max:250',
             'merchant_extra5' => 'string|max:250',
+            'recurring_mode'=>'string',
+            'agreement_id'=>'numeric',
             'remember_me' => 'in:YES,NO|max:3',
             'phone_number' => 'max:19',
             'settlement_reference' => 'string|max:34',
